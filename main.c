@@ -25,7 +25,7 @@ unsigned int fact(int x)
 /*     return x; */
 /* } */
 
-double my_sin(double x) {
+double sin(double x) {
 
     int precision = 15;
     double result = x;
@@ -40,13 +40,31 @@ double my_sin(double x) {
     return result;
 }
 
+double cos(double x) {
+
+    int precision = 15;
+    double result = x;
+    double term = x;
+
+    for(int i = 2; i <= precision; i = i + 2)
+    {
+        printf("%d\n", i);
+
+        term = -term * x * x / ((i - 1) * i);
+        result += term;
+    }
+
+    return result;
+}
+
 
 int main()
 {
-    printf("%f\n", my_sin(1));
+    printf("SIN: %f\n", sin(1));
+    printf("COS: %f\n", cos(1));
 
     // 5 4 3 2 1
-    printf("%d\n", fact(15));
+    //printf("%d\n", fact(15));
 
     return 0;
 }
