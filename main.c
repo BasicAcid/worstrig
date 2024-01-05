@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 unsigned int
-fact(int x)
+fact(unsigned int x)
 {
     unsigned int result = 1;
 
