@@ -45,15 +45,6 @@ double
 tan()
 {}
 
-double
-permutations()
-{}
-
-double
-combinations()
-{}
-
-
 int
 main()
 {
