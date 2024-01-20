@@ -42,6 +42,22 @@ cos(double x)
 }
 
 double
+log(double x)
+{
+    int precision = 15;
+    double result = x;
+    double term = x;
+
+    // TODO: implement this.
+    for(int i = 1; i <= precision; ++i)
+    {
+        term = -(term - 1) * x * x / ((i - 1) * i);
+        result += term;
+    }
+    return result;
+}
+
+double
 tan()
 {}
 
