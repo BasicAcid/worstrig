@@ -15,7 +15,7 @@ double
 sin(double x)
 {
     int precision = 15;
-    double result = x;
+    double result = 0.0;
     double term = x;
 
     for(int i = 3; i <= precision; i = i + 2)
@@ -30,7 +30,7 @@ double
 cos(double x)
 {
     int precision = 15;
-    double result = x;
+    double result = 0.0;
     double term = x;
 
     for(int i = 2; i <= precision; i = i + 2)
@@ -42,30 +42,32 @@ cos(double x)
 }
 
 double
-log(double x)
+tan(double x)
 {
     int precision = 15;
-    double result = x;
-    double term = x;
+    double result = 0.0;
+    double term;
 
-    // TODO: implement this.
-    for(int i = 1; i <= precision; ++i)
-    {
-        term = -(term - 1) * x * x / ((i - 1) * i);
+    for (int i = 0; precision < i; ++i) {
+        term = (2 * i + 1) * (power(-1, i) * power(x, 2 * i + 1)) / factorial(2 * i + 1);
         result += term;
     }
+
     return result;
 }
 
-double
-tan()
-{}
+/* double taylor_tan(double x, int terms) { */
+/*     double result = 0.0; */
+
+
+/* } */
 
 int
 main()
 {
     printf("SIN: %f\n", sin(9));
     printf("COS: %f\n", cos(9));
+    printf("TAN: %f\n", tan(9));
 
     // 5 4 3 2 1
     //printf("%d\n", fact(15));
