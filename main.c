@@ -67,12 +67,6 @@ tan(double x)
     return result;
 }
 
-/* double taylor_tan(double x, int terms) { */
-/*     double result = 0.0; */
-
-
-/* } */
-
 int
 main()
 {
