@@ -42,6 +42,17 @@ cos(double x)
 }
 
 double
+pow(double value, double exponent)
+{
+    double result = 1;
+
+    for(int i = 0; i < exponent; i++)
+        result *= value;
+
+    return result;
+}
+
+double
 tan(double x)
 {
     int precision = 15;
@@ -49,7 +60,7 @@ tan(double x)
     double term;
 
     for (int i = 0; precision < i; ++i) {
-        term = (2 * i + 1) * (power(-1, i) * power(x, 2 * i + 1)) / factorial(2 * i + 1);
+        term = (2 * i + 1) * (pow(-1, i) * pow(x, 2 * i + 1)) / fact(2 * i + 1);
         result += term;
     }
 
